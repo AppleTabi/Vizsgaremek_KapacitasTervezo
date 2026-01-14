@@ -4,17 +4,17 @@ import { Delete, Get, Post, Put } from "@nestjs/common/decorators/http/request-m
 
 
 
-@Controller('users')
+@Controller('munkak')
 export class MunkakController {
        constructor(private readonly munkakService: MunkakService) {}
 
        @Get()
-       async getAllUsers() {
+       async getAllMunkak() {
               return this.munkakService.findAll();
        }
 
        @Get(':id')
-       async getUserById(@Param('id') id: string) {
+       async getMunkaById(@Param('id') id: string) {
               return this.munkakService.findOne(Number(id));
        }
 
